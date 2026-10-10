@@ -1,0 +1,92 @@
+{
+  "_comment": "Edit data.* to point to your REST-meta-MDD copy. ",
+  "run_dir": "./runs",
+  "seed": 42,
+  "device": "auto",
+  "progress_bar": "auto",
+  "data": {
+    "fmri_data_dir": "data/REST-meta-MDD/fMRI/AAL",
+    "smri_data_dir": "data/REST-meta-MDD/VBM",
+    "metadata_csv": "data/REST-meta-MDD/metadata.csv",
+    "clinical_excel_path": "data/REST-meta-MDD/REST-meta-MDD-PhenotypicData_WithHAMDSubItem_V4.xlsx",
+    "cache_root": "data/cache",
+    "smri_imgtypes": [
+      "wc1"
+    ],
+    "smri_normalize": true,
+    "num_workers": 0
+  },
+  "split": {
+    "preset": "exp_05",
+    "test_sites": null,
+    "val_sites": null
+  },
+  "diagnosis": {
+    "column": "label",
+    "mdd_values": null,
+    "hc_values": null
+  },
+  "modalities": [
+    "fmri",
+    "smri"
+  ],
+  "clinical_columns": null,
+  "model": {
+    "fmri_in_channels": 116,
+    "fmri_hidden": 256,
+    "fmri_num_layers": 3,
+    "fmri_out_dim": 128,
+    "fmri_dropout": 0.3,
+    "fmri_num_nodes": 116,
+    "fmri_emb_style": "none",
+    "fmri_emb_size": 128,
+    "fmri_use_attention": true,
+    "fmri_use_hierarchical_pooling": true,
+    "smri_channels": [
+      32,
+      64,
+      128,
+      256,
+      256,
+      64
+    ],
+    "smri_use_attention": true,
+    "smri_use_depthwise_conv": true,
+    "clin_hidden": 64,
+    "clin_out_dim": 32,
+    "common_dim": 32,
+    "unique_dim": 32,
+    "dropout": 0.3,
+    "enc_activation": "leaky_relu"
+  },
+  "training": {
+    "batch_size": 10,
+    "grad_accum_steps": 2,
+    "n_epochs": 200,
+    "patience": 50,
+    "warmup_epochs": 5,
+    "learning_rate": 0.001,
+    "backbone_lr": 0.0005,
+    "weight_decay": 0.001,
+    "finetune_backbone": true,
+    "grad_clip": 1.0,
+    "sanity_batches": 3
+  },
+  "loss": {
+    "task": 1.0,
+    "rec": 0.1,
+    "tc": 0.05,
+    "beta": 1.0,
+    "gamma": 0.01,
+    "var": 1.0,
+    "var_tau": 1.0,
+    "var_on_common": true,
+    "cov": 1.0,
+    "reg_nodrop": true,
+    "mi_estimator": "eq31"
+  },
+  "evaluation": {
+    "bn_recalibration": false,
+    "bias_correction_fit": "train"
+  }
+}
