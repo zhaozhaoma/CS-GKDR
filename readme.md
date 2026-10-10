@@ -1,4 +1,4 @@
-# Interpretable Multimodal Brain Age Prediction via Cauchy-Schwarz Divergence-Induced Gács-Körner Common Information
+## Interpretable Multimodal Brain Age Prediction via Cauchy-Schwarz Divergence-Induced Gács-Körner Common Information
 
 ## Overview
 <p align="center">
