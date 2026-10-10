@@ -141,6 +141,8 @@ python main.py summary --runs \
 
 Trained checkpoints, per-subject predictions, evaluation metrics, and analysis reports are stored under `runs/<run_name>/`. 
 
+
+<!--
 ## Citation
 
 If you use CS-GKDR in your research, we would appreciate your citation 📃:
@@ -153,6 +155,7 @@ If you use CS-GKDR in your research, we would appreciate your citation 📃:
   note={}
 }
 ```
+-->
 
 
 ---
